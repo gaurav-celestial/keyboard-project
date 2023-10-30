@@ -1,7 +1,10 @@
 * {
   padding: 0;
   margin: 0;
-  /* box-sizing: border-box; */
+}
+
+html {
+  /* overflow: hidden; */
 }
 
 body {
@@ -12,16 +15,23 @@ body {
   background-color: yellowgreen !important;
 }
 
+.numMob,
+.returnMob {
+  display: none !important;
+}
+
 .text-container {
-  width: 1200px;
+  height: calc(100vh - 430px);
+  max-width: 840px;
   padding: 20px;
   margin: auto;
-  height: 180px;
+  /* height: 180px; */
   background-color: black;
 }
 .text {
-  width: 1200px;
-  height: 180px;
+  max-width: 840px;
+  height: calc(100vh - 430px);
+  /* height: 180px; */
   background-color: white;
 }
 
@@ -33,60 +43,44 @@ body {
   transform: translate(-50%);
 }
 
+.container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 .keyboard {
   background-color: #c8cccd;
-  font-size: 13px;
+  font-size: 15px;
   height: 350px;
-  width: 1200px;
+  max-width: 840px;
   margin: auto;
   padding: 20px;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   flex-direction: column;
   text-align: center;
 }
 
 .upper-section {
   display: flex;
-  justify-content: space-between;
-  /* gap: 80px; */
+  justify-content: center;
   margin-bottom: 20px;
 }
 
 .upper-section .col-1 {
   display: flex;
-  justify-content: space-between;
-  width: 60%;
-}
-
-.upper-section .col-2 {
-  display: flex;
-  text-align: center;
-}
-
-.inner-col-1,
-.inner-col-2,
-.inner-col-3,
-.inner-col-4 {
-  display: flex;
-  justify-content: space-between;
-}
-
-.upper-section .col-2,
-.upper-section .col-3 {
-  display: flex;
-  width: 20%;
-  align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .k-btn {
   background-color: black;
   color: #f8f9f5;
-  height: 45px;
-  width: 45px;
-  /* padding: 20px; */
+  height: 50px;
+  width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,77 +88,107 @@ body {
 }
 
 .k-btn-special {
-  padding: 0 20px;
+  height: 50px;
+  width: 50px;
   background-color: black;
   color: #f8f9f5;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 5px;
+  flex: 1;
 }
 
-.lower-section {
+.lower-section > div {
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.lower-section .col-1 {
-  width: 60%;
-}
-
-.lower-section .col-2 {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  height: 275px;
-  align-items: center;
-}
-
-.lower-section .col-3 {
-  width: 20%;
-}
-
-.lower-section .col-1 > div,
-.lower-section .col-2 .row-1 > div,
-.lower-section .col-2 .row-2 > div,
-.lower-section .col-3 > div {
-  display: flex;
-}
-
-.lower-section .col-1 > div {
-  justify-content: space-between;
-}
-
-.lower-section .col-2 .row-2 {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.lower-section .col-2 .row-2 .line-2 {
-  display: flex;
 }
 
 .Space {
   justify-self: stretch;
   align-self: stretch;
-  /* background-color: yellowgreen; */
-  width: calc(40%);
+  background-color: black;
+  height: 50px;
+  width: 250px;
+  /* flex: 1; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
 
-.enter,
-.numlock,
-.shift {
-  flex: 1;
-}
-.plus {
+.Escape {
   flex: 1;
 }
 
-.four,
-.one {
-  flex: 1;
+@media screen and (max-width: 768px) {
+  .text {
+    font-size: 30px;
+  }
+  html {
+    font: 10px;
+  }
+  .text-container {
+    height: calc(100vh - 440px);
+  }
+  .text {
+    height: calc(100vh - 440px);
+  }
+  .keyboard {
+    /* background-color: aqua; */
+    height: auto;
+  }
+  .k-btn-special,
+  .AltRight,
+  .AltLeft,
+  .ControlRight,
+  .ControlLeft,
+  .windows {
+    display: none;
+  }
+  .k-btn {
+    width: 45px;
+  }
+  .lower-section > div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .numMob,
+  .returnMob {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Escape {
+    display: none;
+  }
+  .upper-section {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .text-container {
+    height: calc(100vh - 242px);
+  }
+  .text {
+    height: calc(100vh - 242px);
+  }
+  .keyboard {
+    /* background-color: red; */
+    padding: 5px;
+    font-size: 11px;
+  }
+  .k-btn {
+    margin: 1px;
+    height: 30px;
+    width: 35px;
+  }
+  .Space {
+    width: 200px;
+    margin: 1px;
+    height: 30px;
+  }
 }

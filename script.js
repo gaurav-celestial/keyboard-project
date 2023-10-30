@@ -3,6 +3,7 @@ const text = document.querySelector(".text");
 document.addEventListener("keydown", (e) => {
   const active = document.querySelector(".active");
   active && active.classList.remove("active");
+
   // highlighting keys
   if (e.keyCode >= 65 && e.keyCode <= 90) {
     const key = e.key.toLowerCase();
@@ -16,6 +17,12 @@ document.addEventListener("keydown", (e) => {
   // Writing in div
   if ((e.keyCode >= 48 && e.keyCode <= 90) || e.keyCode === 32) {
     // Allowing numbers and characters to get printed
+    text.innerHTML = text.innerHTML + e.key;
+  } else if (e.keyCode >= 186 && e.keyCode <= 192) {
+    // Allowing symbols to get printed
+    text.innerHTML = text.innerHTML + e.key;
+  } else if (e.keyCode >= 219 && e.keyCode <= 222) {
+    // Allowing symbols to get printed
     text.innerHTML = text.innerHTML + e.key;
   } else if (e.keyCode === 27) {
     // Making Escape work for clear
