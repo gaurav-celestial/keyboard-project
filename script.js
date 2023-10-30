@@ -8,10 +8,10 @@ document.addEventListener("keydown", (e) => {
   if (e.keyCode >= 65 && e.keyCode <= 90) {
     const key = e.key.toLowerCase();
     const el = document.querySelector(`.${key}`);
-    el && el.classList.add("active");
+    el && el.classList.add("active", "clicked");
   } else {
     const el = document.querySelector(`.${e.code}`);
-    el && el.classList.add("active");
+    el && el.classList.add("active", "clicked");
   }
 
   // Writing in div
