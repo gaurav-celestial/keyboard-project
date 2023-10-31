@@ -1,6 +1,8 @@
 const text = document.querySelector(".text");
 
 document.addEventListener("keydown", (e) => {
+  e.preventDefault();
+  console.log(e.code);
   const active = document.querySelector(".active");
   active && active.classList.remove("active");
 
@@ -11,6 +13,7 @@ document.addEventListener("keydown", (e) => {
     el && el.classList.add("active", "clicked");
   } else {
     const el = document.querySelector(`.${e.code}`);
+    console.log(el);
     el && el.classList.add("active", "clicked");
   }
 
