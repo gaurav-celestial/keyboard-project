@@ -30,8 +30,15 @@ body {
 .text {
   max-width: 850px;
   height: calc(100vh - 440px);
-  padding: 5px;
+  padding: 10px;
   background-color: white;
+}
+
+.ui {
+  max-width: 850px;
+  padding: 10px 20px;
+  background-color: #fff;
+  text-align: center;
 }
 
 .clear {
